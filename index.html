@@ -1,1 +1,20 @@
-ok
+<script type="text/javascript" src="https://cdns.gigya.com/js/gigya.js?apiKey=3_mK2cmEzLkzhqe4MUrtPncxbv4wKsYAhsew0iVwhVUls3c_Jx_HLX434jAVpq5M_W"></script>
+{
+  enabledProviders: 'googleplus'
+}
+<script>
+  function LoginGoogle() {
+    var params = {
+       "callback": onLogin,
+       "provider": 'googleplus'
+    };  
+    gigya.socialize.login(params);
+  }
+
+  function onLogin(response) {
+    if (response.errorCode == 0) {
+      $('[data-social-signin]').data('social-signin').init(response.user);
+    }
+  }
+</script>
+<div onclick="LoginGoogle()" style="height: 100px;width: 100px;background-color: red">TEST</div>
