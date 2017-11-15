@@ -14,9 +14,7 @@
   }
 
   function onLogin(response) {
-    if (response.errorCode == 0) {
-      $('[data-social-signin]').data('social-signin').init(response.user);
-    }
+    console.log(response);
   }
 </script>
 <div onclick="LoginGoogle()" style="height: 100px;width: 100px;background-color: red">TEST</div>
