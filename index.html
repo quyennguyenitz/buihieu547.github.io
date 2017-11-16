@@ -5,6 +5,14 @@
 }
 </script>
 <script>
+  function LoginLinkedin() {
+    var params = {
+       "callback": onLogin,
+       "provider": 'linkedin'
+    };  
+    gigya.socialize.login(params);
+  }
+  
   function LoginGoogle() {
     var params = {
        "callback": onLogin,
@@ -17,4 +25,5 @@
     console.log(response);
   }
 </script>
+<div onclick="LoginLinkedin()" style="height: 100px;width: 100px;background-color: red">TEST</div>
 <div onclick="LoginGoogle()" style="height: 100px;width: 100px;background-color: red">TEST</div>
