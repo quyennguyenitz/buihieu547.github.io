@@ -1,29 +1,17 @@
-
-<script type="text/javascript" src="https://cdns.gigya.com/js/gigya.js?apiKey=3_lVDgR5iT-9D7c6-6fHAsLteNm7fqNFA7DA-Uu9x2rW45iUA_sI4vlS6h6bkytczG">
-{
-  enabledProviders: 'googleplus,linkedin'
-}
-</script>
-<script>
-  function LoginLinkedin() {
-    var params = {
-       "callback": onLogin,
-       "provider": 'linkedin'
-    };  
-    gigya.socialize.login(params);
-  }
-  
-  function LoginGoogle() {
-    var params = {
-       "callback": onLogin,
-       "provider": 'googleplus'
-    };  
-    gigya.socialize.login(params);
-  }
-
-  function onLogin(response) {
-    console.log(response);
-  }
-</script>
-<div onclick="LoginLinkedin()" style="height: 100px;width: 100px;background-color: red">TEST</div>
-<div onclick="LoginGoogle()" style="height: 100px;width: 100px;background-color: red">TEST</div>
+<html>
+  <head>
+    <script>
+      var apiLinkedin = '786u8yps549myw',
+          clientIdGoogle = '109753200849-lvsnr2unbo51ijahnskimln1mfv799fq.apps.googleusercontent.com',
+          script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.text = 'api_key: ' + apiLinkedin + '\nauthorize: true\nscope: r_basicprofile r_emailaddress';
+      script.src = '//platform.linkedin.com/in.js';
+      document.getElementsByTagName('head')[0].appendChild(script);
+    </script>
+    <script src="assets/js/jquery.js"></script>
+  </head>
+  <body>
+    
+  </body>
+</html>
