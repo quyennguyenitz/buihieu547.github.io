@@ -14,7 +14,7 @@
           $.ajax({
             url: 'https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=786u8yps549myw&redirect_uri=http%3A%2F%2Flocalhost&state=987654321',
             type: 'GET',
-            dataType: 'json',
+            dataType: 'jsonp',
             crossDomain: true,
             contentType: 'application/json; charset=utf-8',
             success: function (data) {
