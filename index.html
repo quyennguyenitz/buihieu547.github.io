@@ -1,17 +1,28 @@
 <html>
   <head>
-    <script>
-      var apiLinkedin = '786u8yps549myw',
-          clientIdGoogle = '109753200849-lvsnr2unbo51ijahnskimln1mfv799fq.apps.googleusercontent.com',
-          script = document.createElement('script');
-      script.type = 'text/javascript';
-      script.text = 'api_key: ' + apiLinkedin + '\nauthorize: true\nscope: r_basicprofile r_emailaddress';
-      script.src = '//platform.linkedin.com/in.js';
-      document.getElementsByTagName('head')[0].appendChild(script);
+    <script type="text/javascript" src="//platform.linkedin.com/in.js">
+      api_key: '786u8yps549myw'
+      authorize: true
+      onLoad: onLinkedInLoad
     </script>
     <script src="assets/js/jquery.js"></script>
   </head>
   <body>
-    
+    <script type="text/javascript">
+      function onLinkedInLoad() {
+        IN.Event.on(IN, "auth", function() {
+          $.ajax({
+            url: 'https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=786u8yps549myw&redirect_uri=http%3A%2F%2Flocalhost&state=987654321',
+            type: 'GET',
+            dataType: 'json',
+            crossDomain: true,
+            contentType: 'application/json; charset=utf-8',
+            success: function (data) {
+              console.log(data);
+            }
+          });
+        });
+      }
+    </script>
   </body>
 </html>
