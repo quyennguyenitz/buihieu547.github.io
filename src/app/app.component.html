@@ -1,0 +1,44 @@
+<div class="wrapper">
+  <header class="clear">
+    <ul>
+      <li>To do</li>
+      <li>Pending</li>
+      <li>Development</li>
+      <li>Testing</li>
+      <li>Production</li>
+    </ul>
+  </header>
+  <section id="dashboard" class="dashboard clear">
+    <div id="rejected" class="rejected"></div>
+    <div id="pending" class="pending">
+      <div class="card ui-draggable">
+        <a href="#" class="expand-card"><svg width="14" height="14" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M883 1056q0 13-10 23l-332 332 144 144q19 19 19 45t-19 45-45 19h-448q-26 0-45-19t-19-45v-448q0-26 19-45t45-19 45 19l144 144 332-332q10-10 23-10t23 10l114 114q10 10 10 23zm781-864v448q0 26-19 45t-45 19-45-19l-144-144-332 332q-10 10-23 10t-23-10l-114-114q-10-10-10-23t10-23l332-332-144-144q-19-19-19-45t19-45 45-19h448q26 0 45 19t19 45z"/></svg></a>
+        <h5 class="ui-draggable-handle">This is a sample task</h5>
+        <div class="card-details">
+          <p data-field="description">Sample tasks are useful to get started</p>
+          <p data-field="remote_url">
+            <a href="https://asana.com/12345/1234" target="_blank">https://asana.com/12345/1234</a>
+          </p>
+          <p data-field="assigned_to">
+            Jon Doe
+          </p>
+        </div>
+      </div>
+    </div>
+    <div id="development" class="development"></div>
+    <div id="testing" class="testing"></div>
+    <div id="production" class="production"></div>
+  </section>
+  <footer>
+    <ul>
+      <li class="branding">Scrum <span>Board</span> <sup>Beta</sup></li>
+    </ul>
+    <ul class="controls">
+      <li>
+        <button type="button">
+          <svg width="20" height="20" viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1600 736v192q0 40-28 68t-68 28h-416v416q0 40-28 68t-68 28h-192q-40 0-68-28t-28-68v-416h-416q-40 0-68-28t-28-68v-192q0-40 28-68t68-28h416v-416q0-40 28-68t68-28h192q40 0 68 28t28 68v416h416q40 0 68 28t28 68z"/></svg>
+        </button>
+      </li>
+    </ul>
+  </footer>
+</div>
