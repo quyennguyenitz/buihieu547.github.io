@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AuthComponent } from './auth/auth.component';
 import { AdminComponent } from './inside/admin.component';
+import { AuthGuard } from "./auth/service/auth.guard";
 
 const routes: Routes = [
     {
@@ -10,7 +11,8 @@ const routes: Routes = [
     },
     {
         path: '',
-        component: AdminComponent
+        component: AdminComponent,
+        "canActivate": [AuthGuard]
     },
     {
         path: '', 
