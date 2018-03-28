@@ -1,32 +1,5 @@
 @import "https://fonts.googleapis.com/css?family=Hind+Vadodara:300,400";
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400");
-* {
-  margin: 0;
-  padding: 0;
-  outline: 0;
-  box-sizing: border-box;
-}
-
-html, body, .wrapper {
-  height: 100%;
-}
-
-body {
-  font-weight: 300;
-  font-family: Hind Vadodara;
-  background-image: linear-gradient(to left, #000428, #004e92);
-  color: #fff;
-  font-size: 14px;
-}
-
-ul {
-  list-style-type: none;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
 
 .clear:after {
   content: "";
@@ -484,7 +457,6 @@ footer {
   top: 0;
   z-index: 997;
   position: fixed;
-  background-color: white;
   background-position: center;
   background-size: cover;
 }
@@ -496,7 +468,7 @@ footer {
   position: fixed;
   left: 0;
   top: 0;
-  background-color: lightyellow;
+  background-color: rgba(0,0,0,.7);
   opacity: .5;
 }
 #loader-box {

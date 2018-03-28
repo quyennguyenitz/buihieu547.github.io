@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
@@ -6,7 +7,10 @@ module.exports = {
   entry: './src/main.ts',
   plugins: [
     new CleanWebpackPlugin(['dist']),
-
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery"
+    }),
     new HtmlWebpackPlugin({
       template: 'index.html'
     })
@@ -49,6 +53,15 @@ module.exports = {
             options: { configFileName: './src/tsconfig.json' }
           }, 'angular2-template-loader'
         ]
+      },{
+        test: /\.js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }
       }
     ]
   }

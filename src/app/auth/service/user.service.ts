@@ -6,6 +6,8 @@ export class UserService {
     constructor(private http: Http) {
     }
 
+    isVerify = false;
+
     verify() {
         return this.http.get('/api/verify', this.jwt()).map((response: Response) => response.json());
     }
@@ -17,7 +19,7 @@ export class UserService {
                 if (user && user.token) {
                     localStorage.setItem('currentUser', JSON.stringify(user));
                 }
-            });
+            }, () => {});
     }
 
     logout() {

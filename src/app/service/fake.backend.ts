@@ -2,15 +2,38 @@ import {BaseRequestOptions, Http, RequestMethod, RequestOptions, Response, Respo
 import {MockBackend, MockConnection} from "@angular/http/testing";
 
 export function mockBackEndFactory(backend: MockBackend, options: BaseRequestOptions, realBackend: XHRBackend) {
+    let token: string = 'fake-jwt-token';
     backend.connections.subscribe((connection: MockConnection) => {
         setTimeout(() => {
             if (connection.request.url.endsWith('/api/authenticate') && connection.request.method === RequestMethod.Post) {
                 let params = JSON.parse(connection.request.getBody());
-                connection.mockRespond(new Response(new ResponseOptions({
-                    status: 200,
-                    body: {}
-                })));
-                // connection.mockError(new Error('Email or password is incorrect'));
+                let users: any[] = JSON.parse(localStorage.getItem('users')) || [];
+                let filteredUsers = users.filter(user => {
+                    return user.email === params.email && user.password === params.password;
+                });
+                if (filteredUsers.length) {
+                    let user = filteredUsers[0];
+                    connection.mockRespond(new Response(new ResponseOptions({
+                        status: 200,
+                        body: {
+                            email: user.email,
+                            token: token
+                        }
+                    })));
+                } else {
+                    connection.mockError(new Error('Email or password is incorrect'));
+                }
+                return;
+            }
+
+            if (connection.request.url.endsWith('/api/verify') && connection.request.method === RequestMethod.Get) {
+                if (connection.request.headers.get('Authorization') === 'Bearer ' + token) {
+                    connection.mockRespond(new Response(new ResponseOptions({status: 200, body: {status: 'ok'}})));
+                } else {
+                    connection.mockRespond(new Response(new ResponseOptions({status: 401})));
+                }
+
+                return;
             }
 
             let realHttp = new Http(realBackend, options);
@@ -29,7 +52,7 @@ export function mockBackEndFactory(backend: MockBackend, options: BaseRequestOpt
                 (error: any) => {
                     connection.mockError(error);
                 });
-        }, 500);
+        }, 3000);
     });
 
     return new Http(backend, options);

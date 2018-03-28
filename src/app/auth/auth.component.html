@@ -1,11 +1,14 @@
 <div class="wrapper-sign">
   <img src="../../assets/images/logo.png">
-  <div class="form-group">
-    <input class="form-control" autocomplete="off" type="text" name="email" placeholder="email">
-  </div>
-  <div class="form-group last">
-    <input class="form-control" autocomplete="off" type="text" name="email" placeholder="password">
-  </div>
+  <form [formGroup]="signInForm">
+    <div class="form-group">
+      <input class="form-control" autocomplete="off" type="text" placeholder="email" formControlName="email">
+    </div>
+    <div class="form-group last">
+      <input class="form-control" autocomplete="off" type="password" placeholder="password" formControlName="pass">
+    </div>
+  </form>
+  <div testDirective></div>
   <div class="form-action">
     <button type="button" (click)="signin()">
       SIGN IN
