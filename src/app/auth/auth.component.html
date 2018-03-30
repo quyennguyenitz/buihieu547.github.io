@@ -1,5 +1,5 @@
 <div class="wrapper-sign">
-  <img src="../../assets/images/logo.png">
+  <h1>Log In</h1>
   <form [formGroup]="signInForm">
     <div class="form-group">
       <input class="form-control" autocomplete="off" type="text" placeholder="email" formControlName="email">
@@ -8,7 +8,6 @@
       <input class="form-control" autocomplete="off" type="password" placeholder="password" formControlName="pass">
     </div>
   </form>
-  <div testDirective></div>
   <div class="form-action">
     <button type="button" (click)="signin()">
       SIGN IN

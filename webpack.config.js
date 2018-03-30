@@ -9,7 +9,8 @@ module.exports = {
     new CleanWebpackPlugin(['dist']),
     new webpack.ProvidePlugin({
       $: "jquery",
-      jQuery: "jquery"
+      jQuery: "jquery",
+      moment: 'moment'
     }),
     new HtmlWebpackPlugin({
       template: 'index.html'
@@ -36,7 +37,7 @@ module.exports = {
           'css-loader'
         ]
       },{
-        test: /\.(png|svg|jpg|gif)$/,
+        test: /\.(png|svg|jpg|gif|woff|woff2|eot|ttf)$/,
         use: [
           'file-loader'
         ]

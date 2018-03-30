@@ -1,3 +1,4 @@
+import '../node_modules/font-awesome/css/font-awesome.css';
 import './assets/css/style.css';
 import '../node_modules/ng2-toastr/bundles/ng2-toastr.min.css';
 import 'core-js/es6';
@@ -16,6 +17,9 @@ import '@angular/router';
 import 'rxjs';
 
 import * as $ from 'jquery';
+import * as moment from 'moment';
+
+console.log(moment);
 
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { enableProdMode } from '@angular/core';

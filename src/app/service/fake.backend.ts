@@ -52,7 +52,7 @@ export function mockBackEndFactory(backend: MockBackend, options: BaseRequestOpt
                 (error: any) => {
                     connection.mockError(error);
                 });
-        }, 3000);
+        }, 500);
     });
 
     return new Http(backend, options);

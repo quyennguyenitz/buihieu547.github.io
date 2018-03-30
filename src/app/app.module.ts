@@ -10,9 +10,9 @@ import { AppComponent } from './app.component';
 import { AppRouteModule } from './app.route.module';
 import { AuthComponent } from './auth/auth.component';
 import { AdminComponent } from './inside/admin.component';
+import { CalendarComponent } from './inside/components/calendar.component';
 
 import { AuthGuard } from "./auth/service/auth.guard";
-import { TestDirective } from "./auth/directive/test.directive";
 import { FakeBackend } from "./service/fake.backend";
 import { CreateDataService } from "./service/createData.service";
 import { UserService } from "./auth/service/user.service";
@@ -31,7 +31,7 @@ import { BehaviorService } from "./service/behavior.service";
         AppComponent,
         AuthComponent,
         AdminComponent,
-        TestDirective
+        CalendarComponent
     ],
     providers: [
         AuthGuard,
