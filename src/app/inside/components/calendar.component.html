@@ -1,14 +1,14 @@
 <div class="calendar-wrapper">
   <div class="calendar-icon">
-    <span class="month">June</span>
-    <span class="day">29</span>
-    <span class="week">Thursday</span>
+    <span class="month">{{ config.currentSelect.format('MMM') }}</span>
+    <span class="day">{{ config.currentSelect.format('DD') }}</span>
+    <span class="week">{{ config.currentSelect.format('dddd') }}</span>
   </div>
   <div class="calendar-popup">
     <div class="calendar-choose-month">
       <div class="calandar-year">
         <span class="left fa fa-chevron-left"></span>
-        <span class="year">2018</span>
+        <span class="year">{{ config.currentSelect.format('YYYY') }}</span>
         <span class="right fa fa-chevron-right"></span>
       </div>
       <div class="calendar-row">
@@ -56,7 +56,7 @@
     </div>
     <div class="calendar-header">
       <div class="calendar-display-month">
-        <span>March - 2018</span>
+        <span>{{ config.currentSelect.format('MMMM') }} - {{ config.currentSelect.format('YYYY') }}</span>
       </div>
       <div class="calendar-week">
         <div class="calendar-day">
@@ -83,91 +83,8 @@
       </div>
     </div>
     <div class="calendar-dates">
-      <div class="calendar-row">
-        <div class="calendar-date not-this-month">
-        </div>
-        <div class="calendar-date not-this-month">
-        </div>
-        <div class="calendar-date not-this-month">
-        </div>
-        <div class="calendar-date">
-        </div>
-        <div class="calendar-date">
-        </div>
-        <div class="calendar-date">
-        </div>
-        <div class="calendar-date">
-        </div>
-      </div>
-      <div class="calendar-row">
-        <div class="calendar-date">
-        </div>
-        <div class="calendar-date">
-        </div>
-        <div class="calendar-date">
-        </div>
-        <div class="calendar-date">
-        </div>
-        <div class="calendar-date">
-        </div>
-        <div class="calendar-date">
-        </div>
-        <div class="calendar-date">
-        </div>
-      </div>
-      <div class="calendar-row">
-        <div class="calendar-date">
-        </div>
-        <div class="calendar-date">
-        </div>
-        <div class="calendar-date">
-        </div>
-        <div class="calendar-date">
-        </div>
-        <div class="calendar-date">
-        </div>
-        <div class="calendar-date">
-        </div>
-        <div class="calendar-date">
-        </div>
-      </div>
-      <div class="calendar-row">
-        <div class="calendar-date">
-        </div>
-        <div class="calendar-date">
-        </div>
-        <div class="calendar-date">
-        </div>
-        <div class="calendar-date">
-        </div>
-        <div class="calendar-date">
-        </div>
-        <div class="calendar-date">
-        </div>
-        <div class="calendar-date">
-          25
-        </div>
-      </div>
-      <div class="calendar-row">
-        <div class="calendar-date">
-        </div>
-        <div class="calendar-date event">
-          27
-        </div>
-        <div class="calendar-date event">
-          28
-        </div>
-        <div class="calendar-date selected">
-          29
-        </div>
-        <div class="calendar-date today">
-          30
-        </div>
-        <div class="calendar-date have-event">
-          31
-        </div>
-        <div class="calendar-date not-this-month">
-        </div>
+      <div *ngFor="let date of config.calendar" class="calendar-date" [ngClass]="{'not-this-month': !date.isMonth, 'today': date.today, 'selected': false, 'event': false}">
+        {{ date.day.format('DD') }}
       </div>
     </div>
   </div>

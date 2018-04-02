@@ -19,8 +19,6 @@ import 'rxjs';
 import * as $ from 'jquery';
 import * as moment from 'moment';
 
-console.log(moment);
-
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { enableProdMode } from '@angular/core';
 
