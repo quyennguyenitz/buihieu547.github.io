@@ -25,29 +25,31 @@
     "@angular/router": "~5.0.0",
     "@angular/upgrade": "~5.0.0",
     "angular-in-memory-web-api": "~0.5.0",
-    "core-js": "^2.4.1",
+    "core-js": "^2.5.4",
     "ng2-toastr": "^4.1.2",
-    "rxjs": "^5.5.0",
+    "rxjs": "^5.5.8",
     "ts-loader": "^3.1.1",
-    "zone.js": "^0.8.4"
+    "zone.js": "^0.8.23"
   },
   "devDependencies": {
     "@types/jasmine": "^2.8.6",
     "@types/jquery": "^3.3.1",
-    "@types/node": "^9.4.0",
+    "@types/node": "^9.6.1",
     "angular2-template-loader": "^0.6.2",
-    "awesome-typescript-loader": "^3.0.4",
+    "awesome-typescript-loader": "^4.0.1",
     "clean-webpack-plugin": "^0.1.18",
-    "css-loader": "^0.28.9",
+    "css-loader": "^0.28.11",
     "file-loader": "^1.1.6",
     "font-awesome": "^4.7.0",
     "html-loader": "^0.4.3",
-    "html-webpack-plugin": "^2.30.1",
+    "html-webpack-plugin": "^3.1.0",
     "jquery": "^3.3.1",
     "moment": "^2.21.0",
     "style-loader": "^0.20.1",
     "tslint": "^3.15.1",
-    "typescript": "2.4.2",
-    "webpack-dev-server": "^2.11.1"
+    "typescript": "^2.8.1",
+    "webpack": "^4.4.1",
+    "webpack-cli": "^2.0.13",
+    "webpack-dev-server": "^3.1.1"
   }
 }
