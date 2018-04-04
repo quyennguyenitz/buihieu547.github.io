@@ -1,0 +1,23 @@
+<h1 class="add-task-title">Create Issue</h1>
+<div class="add-task">
+    <form [formGroup]="addTaskForm">
+        <div class="fieldset-wrapper">
+            <fieldset>
+                <input type="text" required="" formControlName="title">
+                <label>Task title</label>
+            </fieldset>
+            <fieldset>
+                <textarea required formControlName="description"></textarea>
+                <label>Task Description</label>
+            </fieldset>
+            <fieldset>
+                <input type="text" required="" formControlName="estimate">
+                <label>Estimate (eg: 3w 4d 12h 50m)</label>
+            </fieldset>
+        </div>
+        <div class="button-group">
+            <button (click)="createTask()">Create</button>
+            <a [routerLink]="['/']">Leave</a>
+        </div>
+    </form>
+</div>

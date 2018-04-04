@@ -1,24 +1,24 @@
-<div class="calendar-wrapper">
+<div class="calendar-wrapper" [ngStyle]="{'z-index': (config.isShowCalendar) ? 1041 : 1}">
   <div class="calendar-icon" (click)="showCalendar()">
     <span class="month">{{ config.currentSelect.format('MMM') }}</span>
     <span class="day">{{ config.currentSelect.format('DD') }}</span>
     <span class="week">{{ config.currentSelect.format('dddd') }}</span>
   </div>
-  <div class="calendar-popup">
-    <div class="calendar-choose-month">
+  <div class="calendar-popup" *ngIf="config.isShowCalendar">
+    <div class="calendar-choose-month" *ngIf="config.isShowMonth">
       <div class="calandar-year">
-        <span class="left fa fa-chevron-left"></span>
+        <span class="left fa fa-chevron-left" (click)="config.choseYear = config.choseYear - 1"></span>
         <span class="year">{{ config.choseYear }}</span>
-        <span class="right fa fa-chevron-right"></span>
+        <span class="right fa fa-chevron-right" (click)="config.choseYear = config.choseYear + 1"></span>
       </div>
       <div class="calendar-dates">
-        <div class="calendar-month" *ngFor="let month of config.listMonth; let i = index" (click)="setMonth(i+1,config.choseYear)">
+        <div class="calendar-month" *ngFor="let month of config.listMonth; let i = index" (click)="setMonth(i+1,config.choseYear); config.isShowMonth = false">
           {{ month }}
         </div>
       </div>
     </div>
     <div class="calendar-header">
-      <div class="calendar-display-month">
+      <div class="calendar-display-month" (click)="config.isShowMonth = !config.isShowMonth">
         <span>{{ config.choseMonth }}</span>
       </div>
       <div class="calendar-week">
@@ -46,9 +46,10 @@
       </div>
     </div>
     <div class="calendar-dates">
-      <div *ngFor="let date of config.calendar" class="calendar-date" [ngClass]="{'not-this-month': !date.isMonth, 'today': date.today, 'selected': config.currentSelect.format('DD/MM/YYYY') === date.day.format('DD/MM/YYYY'), 'event': false}" (click)="setDay(date.day)">
+      <div *ngFor="let date of config.calendar" class="calendar-date" [ngClass]="{'not-this-month': !date.isMonth, 'today': date.today, 'selected': config.currentSelect.format('DD/MM/YYYY') === date.day.format('DD/MM/YYYY'), 'event': false}" (click)="setDay(date.day); config.isShowCalendar = false">
         {{ date.day.format('DD') }}
       </div>
     </div>
   </div>
 </div>
+<div class="modal-backdrop" [ngClass]="{'hide':!config.isShowCalendar}" (click)="config.isShowCalendar = false"></div>

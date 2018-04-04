@@ -21,7 +21,7 @@
 </section>
 <footer>
   <div class="nav-footer" [ngClass]="{'open':isMenu}" (click)="isMenu = true">
-    <a class="item">
+    <a class="item" [routerLink]="['/add-task']">
       <i class="fa fa-pencil" aria-hidden="true"></i>
     </a>
     <a class="item">

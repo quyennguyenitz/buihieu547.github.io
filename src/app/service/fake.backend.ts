@@ -36,6 +36,29 @@ export function mockBackEndFactory(backend: MockBackend, options: BaseRequestOpt
                 return;
             }
 
+            if (connection.request.url.endsWith('/api/create-task') && connection.request.method === RequestMethod.Post) {
+                let params = JSON.parse(connection.request.getBody());
+                let tasks: any[] = JSON.parse(localStorage.getItem('tasks')) || [];
+
+                if (tasks.length) {
+                    params.taskId = tasks[tasks.length - 1].taskId + 1;
+                } else {
+                    params.taskId = 0;
+                }
+
+                tasks.push(params);
+                localStorage.setItem('tasks', JSON.stringify(tasks));
+
+                connection.mockRespond(new Response(new ResponseOptions({
+                    status: 200,
+                    body: {
+                        messages: ['You created success task']
+                    }
+                })));
+                
+                return;
+            }
+
             let realHttp = new Http(realBackend, options);
             let requestOptions = new RequestOptions({
                 method: connection.request.method,
