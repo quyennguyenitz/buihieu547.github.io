@@ -1,10 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { AcctionTaskService } from '../service/actionTask.service';
+import { BehaviorService } from "../../service/behavior.service";
 
 @Component({
     selector: 'calendar-component',
     templateUrl: './calendar.component.html'
 })
-export class CalendarComponent {
+export class CalendarComponent implements OnInit {
+    @Output() sendTasks = new EventEmitter<any>();
     config = {
         isShowCalendar: false,
         isShowMonth: false,
@@ -51,9 +54,15 @@ export class CalendarComponent {
         }
     }
 
-    constructor()  {
+    constructor(
+        private _actionTaskService: AcctionTaskService,
+        private _behaviorService : BehaviorService
+    )  {}
+
+    ngOnInit() {
         this.config['calendar'] = this.config.getCalendarMonth(this.config.currentSelect);
         this.config['listMonth'] = this.config.getNameMonth();
+        this.getListTask(this.config.currentSelect);
     }
 
     setMonth(month: number, year: number) {
@@ -64,10 +73,22 @@ export class CalendarComponent {
 
     setDay(date: any) {
         this.config.currentSelect = moment(date);
+        this.getListTask(this.config.currentSelect);
     }
 
     showCalendar() {
         this.config.isShowCalendar = !this.config.isShowCalendar;
         this.config.choseYear = Number(this.config.currentSelect.format('YYYY'));
+    }
+
+    getListTask(date: any) {
+        this._behaviorService.setLoading(true);
+        this._actionTaskService.getTask({createDate: date.valueOf()})
+        .finally(() => {
+            this._behaviorService.setLoading(false);
+        })
+        .subscribe((res) => {
+            this.sendTasks.emit(res.json().data);
+        });
     }
 }

@@ -45,4 +45,8 @@ export class AcctionTaskService {
 
         return number*millisecond;
     }
+
+    getTask(data: any) {
+        return this.http.get('/api/tasks', {params: data});
+    }
 }

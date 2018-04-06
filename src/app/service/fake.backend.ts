@@ -46,6 +46,9 @@ export function mockBackEndFactory(backend: MockBackend, options: BaseRequestOpt
                     params.taskId = 0;
                 }
 
+                params['createDate'] = new Date().getTime();
+                params['status'] = 0;
+
                 tasks.push(params);
                 localStorage.setItem('tasks', JSON.stringify(tasks));
 
@@ -53,6 +56,34 @@ export function mockBackEndFactory(backend: MockBackend, options: BaseRequestOpt
                     status: 200,
                     body: {
                         messages: ['You created success task']
+                    }
+                })));
+                
+                return;
+            }
+
+            if (connection.request.url.match(/\/api\/tasks/) && connection.request.method === RequestMethod.Get) {
+                let url = connection.request.url.split('?'),
+                    params: {},
+                    filteredTask = [],
+                    tasks: any[] = JSON.parse(localStorage.getItem('tasks')) || [];
+
+                if (url.length > 1) {
+                    params = JSON.parse('{"' + decodeURI(url[1].substring(0)).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"') + '"}')
+                }
+
+                if (params['createDate'] && tasks.length) {
+                    let createDate = moment(Number(params['createDate'])).format('DD/MM/YYYY');
+
+                    filteredTask = tasks.filter(task => {
+                        return moment(task.createDate).format('DD/MM/YYYY') === createDate;
+                    });
+                }
+
+                connection.mockRespond(new Response(new ResponseOptions({
+                    status: 200,
+                    body: {
+                        data: filteredTask
                     }
                 })));
                 

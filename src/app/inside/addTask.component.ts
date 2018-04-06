@@ -28,8 +28,6 @@ export class AddTaskComponent {
         this.addTaskForm = this.fb.group({
             title: ['', Validators.required ],
             description: ['', Validators.required ],
-            createDate: new Date().getTime(),
-            status: 0,
             estimate: ['', Validators.pattern(this.patternEst) ]
         });
     }

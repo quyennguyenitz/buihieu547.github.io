@@ -1,23 +1,33 @@
 <div class="wrapper">
 <header class="clear">
-<ul>
-  <li>To do</li>
-  <li>Pending</li>
-  <li>Development</li>
-  <li>Testing</li>
-  <li>Production</li>
-</ul>
+  <ul>
+    <li>To do</li>
+    <li>In Progress</li>
+    <li>Done</li>
+    <li>Testing</li>
+    <li>Production</li>
+  </ul>
 </header>
 <section id="dashboard" class="dashboard clear">
-<div id="rejected" class="rejected"></div>
-<div id="pending" class="pending">
-  <div class="card ui-draggable">
-    <h5 class="ui-draggable-handle">This is a sample task</h5>
+  <div id="rejected" class="rejected">
+    <div class="card ui-draggable" *ngFor="let task of listTasks.todo">
+      <h5 class="ui-draggable-handle">
+        {{ task.title }}
+      </h5>
+    </div>
   </div>
-</div>
-<div id="development" class="development"></div>
-<div id="testing" class="testing"></div>
-<div id="production" class="production"></div>
+  <div id="pending" class="pending">
+    
+  </div>
+  <div id="development" class="development">
+    
+  </div>
+  <div id="testing" class="testing">
+    
+  </div>
+  <div id="production" class="production">
+    
+  </div>
 </section>
 <footer>
   <div class="nav-footer" [ngClass]="{'open':isMenu}" (click)="isMenu = true">
@@ -35,6 +45,6 @@
     </a>
   </div>
   <div class="modal-backdrop" [ngClass]="{'hide':!isMenu}" (click)="isMenu = false"></div>
-  <calendar-component></calendar-component>
+  <calendar-component (sendTasks)="sendTasks($event)"></calendar-component>
 </footer>
 </div>
