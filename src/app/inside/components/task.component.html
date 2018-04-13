@@ -1,4 +1,4 @@
-<div class="card ui-draggable" moveTask>
+<div class="card ui-draggable" moveTask [attr.data-id]="task.taskId" [attr.data-type]="type" (changeStatus)="changeStatus($event)">
   <h5 class="ui-draggable-handle">
     {{ task.title }}
   </h5>

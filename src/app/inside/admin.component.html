@@ -9,20 +9,20 @@
   </ul>
 </header>
 <section id="dashboard" class="dashboard clear">
-  <div id="rejected" class="rejected">
-    <task-component *ngFor="let task of listTasks.todo" [task]="task"></task-component>
+  <div id="rejected" class="rejected" data-type="todo">
+    <task-component *ngFor="let task of listTasks.todo" [task]="task" [type]="'todo'" (changeStatusContinue)="changeStatusContinue($event)"></task-component>
   </div>
-  <div id="pending" class="pending">
-    
+  <div id="pending" class="pending" data-type="progress">
+    <task-component *ngFor="let task of listTasks.progress" [task]="task" [type]="'progress'" (changeStatusContinue)="changeStatusContinue($event)"></task-component>
   </div>
-  <div id="development" class="development">
-    
+  <div id="development" class="development" data-type="done">
+    <task-component *ngFor="let task of listTasks.done" [task]="task" [type]="'done'" (changeStatusContinue)="changeStatusContinue($event)"></task-component>
   </div>
-  <div id="testing" class="testing">
-    
+  <div id="testing" class="testing" data-type="testing">
+    <task-component *ngFor="let task of listTasks.testing" [task]="task" [type]="'testing'" (changeStatusContinue)="changeStatusContinue($event)"></task-component>
   </div>
-  <div id="production" class="production">
-    
+  <div id="production" class="production" data-type="production">
+    <task-component *ngFor="let task of listTasks.production" [task]="task" [type]="'production'" (changeStatusContinue)="changeStatusContinue($event)"></task-component>
   </div>
 </section>
 <footer>

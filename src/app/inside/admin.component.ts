@@ -30,4 +30,15 @@ export class AdminComponent implements OnInit {
     sendTasks(data: any) {
         this.filterTask(data);
     }
+
+    changeStatusContinue(data: any) {
+        let oldTask = this.listTasks[data.oldType];
+
+        for (let i = 0, len = oldTask.length; i < len; i++) {
+            if (data.id === oldTask[i].taskId) {
+                this.listTasks[data.type] = this.listTasks[data.type].concat(oldTask.splice(i,1));
+                break;
+            }
+        }
+    }
 }

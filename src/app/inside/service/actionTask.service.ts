@@ -46,6 +46,24 @@ export class AcctionTaskService {
         return number*millisecond;
     }
 
+    getPositionTasks() {
+        let tasks = $('#dashboard').children(),
+            positionTasks: any[] = [];
+
+        tasks.each(function() {
+            let itself = $(this),
+                position = itself.offset();
+
+            position['bot'] = position.top + itself.height();
+            position['right'] = position.left + itself.width();
+            position['type'] = itself.data()['type'];
+
+            positionTasks.push(position);
+        });
+
+        return positionTasks;
+    }
+
     getTask(data: any) {
         return this.http.get('/api/tasks', {params: data});
     }

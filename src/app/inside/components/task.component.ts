@@ -8,6 +8,8 @@ import { BehaviorService } from "../../service/behavior.service";
 })
 export class TaskComponent implements OnInit {
 	@Input() task:any;
+    @Input() type:any;
+    @Output() changeStatusContinue = new EventEmitter<any>();
 
     constructor(
         private _actionTaskService: AcctionTaskService,
@@ -16,5 +18,9 @@ export class TaskComponent implements OnInit {
 
     ngOnInit() {
         
+    }
+
+    changeStatus(e: any) {
+        this.changeStatusContinue.emit(e);
     }
 }
