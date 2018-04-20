@@ -1,0 +1,17 @@
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+.settings
+npm-debug.log
+.cache
+._*
+Thumbs.db
+node_modules
+static
+/.grunt
+/app/styles/iconfonts.less
+/screenshots
+/failures
+/test/**/results
+/test/**/layout-regression-test.html
+/test/**/layout-test.js

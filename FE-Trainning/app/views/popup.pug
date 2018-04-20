@@ -1,0 +1,11 @@
+extends layouts/layout
+
+block vars
+  -title = 'Popup'
+  -bodyClass = 'style-guide'
+
+block container
+  h1.style-guide-header Popup
+  h2.style-guide-sub-header Show popup
+  ul.link-list
+    li: +link('Show popup')(class='btn', id='conditions', data-modal-open)

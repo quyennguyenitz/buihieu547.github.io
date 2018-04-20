@@ -1,0 +1,32 @@
+// Accordion style
+.accordion{
+  .px2rem(font-size, 15);
+  .accordion-title{
+    background-color: @blue;
+    color: #ffffff;
+    .px2rem(padding, 10 15);
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 1px;
+    .icon{
+      position: absolute;
+      .px2rem(font-size, 10);
+      top: 50%;
+      right: 10px;
+      margin-top: -5px;
+    }
+    &.active{
+      .icon{
+
+      }
+    }
+  }
+
+  .accordion-content{
+    .px2rem(padding, 20);
+    border: 1px solid @blue;
+    margin-bottom: 1px;
+    line-height: 1.5;
+  }
+}
+

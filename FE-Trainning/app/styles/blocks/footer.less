@@ -1,0 +1,226 @@
+footer.mobile {
+  display: none !important;
+}
+.footer {
+  &-bar {
+    font-family: @font-geo706mb;
+    overflow: hidden;
+    background-color: #131112;
+    font-size: 15px;
+    color: rgba(255,255,255, 0.3);
+    padding: 77px 0px 83px;
+    a {
+      color: rgba(255,255,255, 0.3);
+      &:hover{
+          color: #fff;
+      }
+    }
+  }
+  &-row {
+    margin-right: -50px;
+  }
+  &-col {
+    width: 40%;
+    float: left;
+    padding-right: 50px;
+    &:nth-child(2){
+      width: 30%;
+    }
+    &:nth-child(3){
+      width: 30%;
+    }
+    p {
+      line-height: 19px;
+    }
+  }
+  &-nav {
+    float: right;
+    margin-right: 70px;
+    li {
+      display: block;
+      margin-bottom: 23px;
+      &:last-child {
+        margin-bottom: 0px;
+      }
+    }
+  }
+  &-social {
+    margin-left: 50px;
+    span{ 
+      display: block;
+      margin-bottom: 20px;
+    }
+    li {
+      float: left;
+      margin-right: 17px;
+      a {
+        width: 42px;
+        display: block;
+        background-color: #cebca5;
+        color: #000;
+        text-align: center;
+        border-radius: 50%;
+        opacity: 0.4;
+        i {
+          line-height: 42px;
+          font-size: 22px;
+        }
+        &:hover{
+          background-color: #fff;
+          opacity: 1;
+          color: #000;
+        }
+      }
+    }
+  }
+  &-bottom {
+    background-color: #000;
+    padding: 60px 0px;
+    text-align: center;
+    p {
+      color: #665854;
+      font-size: 18px;
+      margin-bottom: 6px;
+      font-family: @font-amiri-slanted;
+    }
+    border-bottom: 7px solid #201c19;
+  }
+}
+
+@media only screen and (max-width : @screen-md-2) {
+  .footer {
+    &-nav {
+      margin-right: 50px;
+    }
+    &-social {
+      margin-left: 0px;
+    }
+  }
+}
+
+@media only screen and (max-width: @screen-sm-min) {
+  footer.mobile {
+    display: block !important;
+  }
+  footer.desktop {
+    display: none;
+  }
+  footer {
+    font-size: 30px;
+    color: rgba(255,255,255, 0.3);
+    a {
+      color: rgba(255,255,255, 0.3);
+      &:hover{
+        color: #fff;
+      }
+    }
+    text-align: center;
+  }
+  .footer {
+    &-social {
+      background-color: #131112;
+      margin: 0px;
+      padding: 75px 0px 100px;
+      span {
+        margin-bottom: 43px;
+      }
+      ul {
+        text-align: center;
+        li {
+          display: inline-block;
+          float: none;
+          margin-left: 20px;
+          margin-right: 20px;
+          a {
+            width: 83px;
+            i {
+              font-size: 40px;
+              line-height: 83px;
+            }
+          }
+        }
+      }
+    }
+    &-menu {
+      background-color: #0f0d0e;
+      padding: 120px 0px 135px;
+      p {
+        color: #1a1819;
+        line-height: 35px;
+      }
+    }
+    &-nav {
+      float: none;
+      margin: 0px;
+      li {
+        margin-bottom: 50px;
+      }
+      &-line {
+        width: 92px;
+        border-bottom: 4px solid #272727;
+        margin: 65px auto 58px;
+      }
+    }
+    &-bottom {
+      padding: 80px 0px;
+      border-bottom: 0px;
+      p {
+        font-size: 35px;
+        margin-bottom: 0px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width : @screen-xs) {
+  footer {
+    font-size: 24px;
+  }
+  .footer {
+    &-social {
+      padding: 65px 0px 85px;
+      span {
+        margin-bottom: 33px;
+      }
+      ul {
+        text-align: center;
+        li {
+          display: inline-block;
+          float: none;
+          margin-left: 15px;
+          margin-right: 15px;
+          a {
+            width: 63px;
+            i {
+              font-size: 30px;
+              line-height: 63px;
+            }
+          }
+        }
+      }
+    }
+    &-menu {
+      background-color: #0f0d0e;
+      padding: 100px 0px 115px;
+      p {
+        color: #1a1819;
+        line-height: 30px;
+      }
+    }
+    &-nav {
+      font-family: @font-geo706mb;
+      li {
+        margin-bottom: 40px;
+      }
+      &-line {
+        margin: 55px auto 48px;
+      }
+    }
+    &-bottom {
+      padding: 70px 0px;
+      p {
+        font-size: 30px;
+      }
+    }
+  }
+}

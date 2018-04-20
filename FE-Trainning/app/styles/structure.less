@@ -1,0 +1,63 @@
+// Structure
+.container-default {
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.container {
+  .container-default;
+  max-width: 1130px;
+  &-2 {
+    .container-default;
+    max-width: 945px;
+  }
+  &-3 {
+    .container-default;
+    max-width: 1085px;
+  }
+  &-4 {
+    .container-default;
+    max-width: 1178px;
+  }
+}
+
+.container, .container-2, .container-3, .container-4, .nav-wrapper, .top-bar, 
+.communayte-row, .commercial-row, .club-row, .club-star, .post-row, .footer-row, 
+.meal-row, .sign-in, .top-bar-mobile {
+	&:before {
+  	display: table;
+    content: " ";
+  }
+  &:after {
+  	clear: both;
+  	display: table;
+    content: " ";
+  }
+}
+
+main {
+  margin: 5px 0;
+  padding: 10px;
+  min-height: 500px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  box-shadow: 0 1px 1px;
+}
+
+@media only screen and (max-width : @screen-sm-min) {
+  .container {
+    padding: 0 50px;
+    &-2, &-3, &-4 {
+      padding: 0 50px;
+    }
+  }
+}
+
+@media only screen and (max-width : @screen-mobile-landscape) {
+  .container {
+    padding: 0 20px;
+    &-2, &-3, &-4 {
+      padding: 0 20px;
+    }
+  }
+}

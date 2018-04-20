@@ -1,0 +1,136 @@
+// Common
+// Title block
+.section-title{
+  .clearfix();
+  .main-title{
+    font-family: @exo-semibold;
+    color: @blue;
+    .px2rem(font-size, 30);
+    text-align: center;
+    .px2rem(margin-bottom, 10);
+  }
+  .desc{
+    font-family: @open-sans;
+    .px2rem(font-size, 15);
+  }
+}
+
+// Color
+.bg-gray{
+  background: @bg-gray;
+}
+
+// Text size
+.text-large{
+  .px2rem(font-size, 15);
+}
+
+// Button
+.btn {
+  font-size: 14px;
+  line-height: 46px;
+  display: inline-block;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-family: @font-geo706b;
+  padding: 0px 20px;
+  text-align: center;
+  color: #000;
+  background-color: #fff;
+  &:hover {
+    color: #be1c10;
+  }
+  &-white {
+    background-color: #fff;
+    color: #c8170f;
+    &:hover {
+      color: #000;
+    }
+  }
+  &-yellow {
+    background-color: #ffe4a9;
+    color: #c6190e;
+    &:hover {
+      background-color: #fff;
+    }
+  }
+  &-red {
+    color: #fff;
+    background-color: #be1c10;
+    &:hover {
+      background-color: #fff;
+    }
+  }
+}
+
+.title {
+  font-size: 32px;
+  text-transform: uppercase;
+  font-family: @font-geo706b;
+}
+
+.sub {
+  color: @color;
+  font-weight: 300;
+  font-family: @font-amiri-slanted;
+}
+
+.text-content {
+  font-size: 21px;
+  font-family: @font-amiri;
+  line-height: 27px;
+}
+
+// Link
+.link{
+  color: @pink;
+  text-decoration: underline;
+}
+
+// Popup
+.modal{
+  position: fixed;
+  z-index: 9;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  .modal-content{
+    position: relative;
+    background-color: #ffffff;
+    margin: auto;
+    padding: 0;
+    border: 1px solid @color;
+    width: 60%;
+    height: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  .modal-header {
+    position: relative;
+    padding: 35px 20px 10px;
+    text-align: center;
+    .closed {
+      position: absolute;
+      .px2rem(top, 5);
+      .px2rem(right, 10);
+      .px2rem(font-size, 25);
+      cursor: pointer;
+    }
+    .title {
+      .px2rem(font-size, 28);
+      color: @blue;
+      font-family: @exo-semibold;
+    }
+  }
+  .modal-body {
+    overflow: auto;
+    height: 85%;
+    .px2rem(font-size, 15);
+    .px2rem(line-height, 20);
+    .px2rem(padding, 15 10 15 20);
+    .inner-content {
+      .px2rem(padding-right,22);
+    }
+  }
+}

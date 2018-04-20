@@ -1,0 +1,217 @@
+extends layouts/template
+
+block vars
+  -title = 'Aoste - Homepage'
+
+block container
+  div.header-wrapper
+    include blocks/header
+    section.slider
+      div.container
+        div.owl-carousel.owl-theme.slider-desktop
+          div.item
+            div.slider-box
+              span.slider-title Extraordinaire chiffonnade
+              div.slider-content
+                p.text-content Expérimentez cette decoupe delicate qui dévoile tous les arômes du hambon à l'instant même où il rencontre le palais
+              a(href="#" title="en savoir plus").btn en savoir plus
+          div.item
+            div.slider-box
+              span.slider-title Extraordinaire chiffonnade
+              div.slider-content
+                p.text-content Expérimentez cette decoupe delicate qui dévoile tous les arômes du hambon à l'instant même où il rencontre le palais
+              a(href="#" title="en savoir plus").btn en savoir plus
+          div.item
+            div.slider-box
+              span.slider-title Extraordinaire chiffonnade
+              div.slider-content
+                p.text-content Expérimentez cette decoupe delicate qui dévoile tous les arômes du hambon à l'instant même où il rencontre le palais
+              a(href="#" title="en savoir plus").btn en savoir plus
+    section.commercial(animated="zoom-in")
+      div.container-2
+        div.commercial-row
+          div.commercial-col
+            div.portrait
+              div.portrait-wrapper
+                div.portrait-box
+                  h3.portrait-title portrait
+                  p.portrait-name chirstophe adam
+                  p.portrait-position chef cuisinier
+          div.commercial-col
+            div.mois
+              h3.title.mois-title les saveurs
+              span.sub.mois-sub du mois
+              p.text-content.mois-content Lorem ipsum dolor sit amet, 
+                br
+                .
+                  consectetur adipiscing elit. 
+                br
+                .
+                  Suspendisse luctus.
+              div.mois-line
+              a.btn(href="#" title="découvrir la recette") découvrir la recette
+        div.commercial-row
+          div.commercial-col.right
+            div.surprise
+              div.surprise-wrapper
+                h3.title.surprise-title recette
+                span.sub.surprise-sub Surprise !
+                div.surprise-icon
+                div.surprise-line
+                p.text-content.surprise-text Si vous nous laissiez choisir pour vous ?
+                p.text-content S'il y a bien une saveur qui fait toujours I'unanimité, cést celle de la surprise.
+          div.commercial-col
+            div.inspiration
+              div.inspiration-wrapper
+                p.inspiration-content Il n'y a pas
+                  br
+                  .
+                    d'amour plus sincère
+                  br
+                  .
+                    que celui de la
+                  br
+                  .
+                    bonne chair
+                div.inspiration-line 
+                h3.inspiration-title geogre bernard shaw
+    section.club(animated="roll-in")
+      div.container-3
+        div.club-wrapper
+          div.club-row
+            div.club-col
+              h3.club-title 
+                span.text-1 Club
+                span.text-2 Aoste
+              ul.club-star
+                li
+                li
+                li
+            div.club-col
+              p.text-content.club-content.text-3 Goutez aux orivilèges
+              p.text-content.club-content.text-2 du Club AOSTE : Ventes privées, exclusivités et de nombeux avantages
+            div.club-col.right
+              a(href="#" title="devenir membre").btn.btn-yellow.club-btn devenir membre
+  section.meal(animated="slide-in-down")
+    div.container-4
+      div.meal-row
+        div.meal-col.right
+          div.par
+            div.par-line
+            h3.title.par-title L'ART
+              br
+              .
+                De la dégustation
+            span.sub.par-sub par aoste
+            a(href="#" title="devenir un fin connaisseur").btn.btn-red devenir un fin connaisseur
+        div.meal-col
+          div.produilt
+            h3.title.produilt-title et si vous vous laissiez tenter ?
+            span.sub.produilt-sub Viande des Grisons
+            p.text-content.produilt-content Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod
+            div.produilt-img
+  section.communayte(animated="zoom-in-left")
+    div.container-4
+      div.communayte-row
+        div.communayte-col
+          div.la
+            div.la-row
+              div.la-line
+            div.la-row
+              h3.title la communauté
+              span.la-sub Aoste
+              p.text-content.la-content Rejoignez-noussur Facebook 
+                br
+                .
+                  et partagez notre actualité avec tous
+                br
+                .
+                  les  autres fans de la marque.
+            div.la-row
+              div.la-box-icon
+                div.la-icon-comment
+                span.la-number(data-count="342") 342
+                span.la-unit K
+            div.la-row
+              div.la-box-icon
+                div.la-icon-like
+                span.la-number(data-count="634") 634
+                span.la-unit K
+            div.la-row
+              div.la-line
+            a(href="#" title="rejoignez-nous").btn.btn-white.right rejoignez-nous
+        div.customer-bg-mobile  
+          div.communayte-col
+            div.customer
+              div.owl-carousel.owl-theme.customer-slider
+                div.item
+                  div.customer-wrapper
+                    img(src="images/image.jpg")
+                div.item
+                  div.customer-wrapper
+                    img(src="images/image-2.jpg")
+            p.text-content.customer-content Avis aux gourmands :) Retrouvez-nous ce week-end dans plusieurs points de Paris pour une dégustation gratuite et pleine de surprises !
+  section.ins(animated="slide-in-up")
+    div.container-3
+      div.ins-row
+        div.ins-img.special.left(style="background-image: url(images/ins-5.jpg)")
+        div.ins-img(style="background-image: url(images/ins.jpg)")
+        div.ins-img(style="background-image: url(images/ins-2.jpg)")
+        div.ins-img(style="background-image: url(images/ins-3.jpg)")
+        div.ins-img.special.right(style="background-image: url(images/ins-8.jpg)")
+      div.ins-row
+        div.ins-img.special.left(style="background-image: url(images/ins-6.jpg)")
+        div.ins-box
+          h3.title vous le dites si bien
+          span.sub.ins-sub Les instagrams
+          p.text-content Dressages hauts en couleurs, assiettes gourandes. Vos contributions Instagram nous mettent en appetit... On partage !
+        div.ins-img(style="background-image: url(images/ins-4.jpg)")
+        div.ins-img.special.right(style="background-image: url(images/ins-7.jpg)")
+  section.ins-mobile(animated="zoom-in-down")
+    div.ins-row
+      div.ins-img
+        img(src="images/ins-5.jpg" alt="instagrams")
+      div.ins-img
+        img(src="images/ins-3.jpg" alt="instagrams")
+      div.ins-img
+        img(src="images/ins-4.jpg" alt="instagrams")
+    div.ins-row
+      div.ins-img
+        img(src="images/ins-6.jpg" alt="instagrams")
+      div.ins-img
+        img(src="images/ins.jpg" alt="instagrams")
+      div.ins-img
+        img(src="images/ins-2.jpg" alt="instagrams")
+    di.ins-row
+      div.ins-box
+        div.container
+          h3.title vous le dites si bien
+          span.sub.ins-sub Les instagrams
+          p.text-content Dressages hauts en couleurs, assiettes gourandes. Vos contributions Instagram nous mettent en appetit... On partage !
+  section.post(animated="zoom-in-right")
+    div.container-3
+      div.post-row
+        div.post-col
+          div.post-item
+            div.post-box-image
+              img.post-box-image(src="images/post2.jpg", alt="post")
+            div.post-content
+              div.post-line
+              h3.title.post-title en ce moment
+              span.sub.post-review Dans nos boutiques
+              p.text-content.post-info Lorem ipsum dolor sit amet, consectetur AdipiscinElt. Maecenas fermentum arcu Integer et nunc turpis. Maecenas Fermentum arcu felis, fermentum
+              a(href="#" title="découvrir notre actualité").btn.btn-red découvrir notre actualité
+        div.post-col
+          div.post-item
+            div.post-box-image
+              img.post-box-image(src="images/post.jpg", alt="post")
+            div.post-content
+              h3.title.post-title le quiz
+              span.post-sub ce mois-ci
+              span.sub.post-review La cuine au cinéma
+              p.text-content.post-info Chaque mois, Aoste vous propose un nouveau Quizz pour vous permettre d'alimenter votre cagnotte CLUB.
+              a(href="#").btn.btn-red à vous de jouer
+      div.retour 
+        a(href="#0" title="retour en haut").btn retour en haut
+  include blocks/footer
+  a(href="#0" title="push to top").cd-top

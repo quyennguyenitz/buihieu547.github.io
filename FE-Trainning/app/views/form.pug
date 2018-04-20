@@ -1,0 +1,213 @@
+extends layouts/layout
+
+block vars
+  -title = 'Form'
+  -bodyClass = 'style-guide'
+
+block container
+  h1.style-guide-header Form
+  +form('subscription-form')(class='form-1', novalidate, data-validate-custom, data-parsley-focus='first', data-parsley-validate)
+    .form-row
+      .form-col
+        +input-group-custom(
+          {
+            type: 'text',
+            classInput: 'input-custom',
+            id: 'company',
+            name: 'company',
+            textLabel:'Raison sociale'
+          },
+          {
+            'maxlength': 38,
+            'required': true,
+            'data-parsley-required': 'true',
+            'data-parsley-required-message': 'Merci de renseigner les champs obligatoires'
+          }
+        )(data-wrap-input)
+    .form-row
+      .form-col
+        +label('radio-1', 'Le genre')
+        .form-group
+          +radio-custom(
+            {
+              type:'radio',
+              id:'radio-1',
+              name: 'radio-gender[]',
+              label:'mâle'
+            },
+            {
+              'checked': 'checked',
+              'required': true,
+              'data-parsley-required': 'true',
+              'data-parsley-required-message': 'Merci de choisir au minimum un site',
+              'data-parsley-trigger': 'change'
+            }
+          )
+          +radio-custom(
+            {
+              type:'radio',
+              id:'radio-2',
+              name: 'radio-gender[]',
+              label:'femelle'
+            }
+          )
+    .form-row
+      .form-col.half
+        +input-group-custom(
+          {
+            type: 'text',
+            classInput: 'input-custom',
+            id: 'user-name',
+            name: 'user-name',
+            textLabel:'Nom'
+          },
+          {
+            'required': true,
+            'data-parsley-required': 'true',
+            'data-parsley-required-message': 'Merci de renseigner les champs obligatoires'
+          }
+        )(data-wrap-input)
+      .form-col.half
+        +input-group-custom(
+          {
+            type: 'text',
+            classInput: 'input-custom',
+            id: 'first-name',
+            name: 'first-name',
+            textLabel:'Prénom'
+          },
+          {
+            'required': true,
+            'data-parsley-required': 'true',
+            'data-parsley-required-message': 'Merci de renseigner les champs obligatoires'
+          }
+        )(data-wrap-input)
+    .form-row
+      .form-col.width-1
+        +input-group-custom(
+          {
+            type: 'text',
+            classInput: 'input-custom',
+            id: 'postal-code',
+            name: 'postal-code',
+            textLabel:'Code Postal'
+          },
+          {
+            'required': true,
+            'data-parsley-required': 'true',
+            'data-parsley-required-message': 'Merci de renseigner les champs obligatoires',
+            'data-parsley-pattern': '[0-9]{5}',
+            'maxlength': 5,
+            'data-parsley-pattern-message': 'Merci d’indiquer un code postal valide'
+          }
+        )(data-wrap-input)
+      .form-col.width-2
+        +input-group-custom(
+          {
+            type: 'text',
+            classInput: 'input-custom',
+            id: 'town',
+            name: 'town',
+            textLabel:'Ville'
+          },
+          {
+            'required': true,
+            'data-parsley-required': 'true',
+            'data-parsley-required-message': 'Merci de renseigner les champs obligatoires'
+          }
+        )(data-wrap-input)
+    .form-row
+      .form-col
+        +input-group-custom(
+          {
+            type: 'text',
+            classInput: 'input-custom',
+            id: 'e-mail',
+            name: 'e-mail',
+            textLabel:'Email'
+          },
+          {
+            'required': true,
+            'data-parsley-required': 'true',
+            'data-parsley-type': 'email',
+            'data-parsley-required-message': 'Merci de renseigner les champs obligatoires',
+            'data-parsley-type-message': 'Merci d’indiquer une adresse email valide'
+          }
+        )(data-wrap-input)
+    .form-row
+      .form-col
+        +select-custom(
+        {
+          id: 'select-activity',
+          textLabel: 'Veuillez sélectionner votre activité',
+        },
+        {
+          'required': 'true',
+          'data-parsley-required': 'true',
+          'data-parsley-required-message':'Merci de sélectionner votre activité',
+          'data-input-parsley': 'true',
+          'data-parsley-trigger': 'change',
+          'data-parsley-trigger-after-failure': 'change'
+        },
+        [
+          { text: 'Sélectionner votre activité', value: '', selected: true},
+          { text: ' Works Council or similar', value: '1' },
+          { text: 'Association', value: '2' },
+          { text: 'Reseller CE', value: '3' },
+          { text: 'Professional Tourism', value: '4' },
+          { text: 'Coach', value: '5' },
+          { text: 'Retail', value: '6' },
+          { text: 'Netplayers', value: '7' },
+          { text: 'School Groups', value: '8' },
+          { text: 'Individual travel agents', value: '9' },
+          { text: 'Tour operator', value: '10' },
+        ])(data-wrap-input)
+    .form-row
+      .form-col
+        +label('checkbox', 'J’accepte les Conditions Générales d’Utilisation')
+        .form-row(data-wrap-input)
+          .form-col.half
+            +check-box-custom(
+              {
+                type:'checkbox',
+                id:'checkbox-1',
+                name: 'checkbox-park[]',
+                value:'Parc Astérix',
+              },
+              {
+                'required': true,
+                'data-parsley-required': 'true',
+                'data-parsley-required-message': 'Merci de choisir au minimum un site',
+                'data-parsley-trigger': 'change'
+              }
+            )
+            +check-box-custom({type:'checkbox', id:'checkbox-2',name: 'checkbox-park[]', value:'Futuroscope'})
+            +check-box-custom({type:'checkbox', id:'checkbox-3',name: 'checkbox-park[]', value:'Grévin Paris'})
+            +check-box-custom({type:'checkbox', id:'checkbox-4',name: 'checkbox-park[]', value:'Bellewaerde'})
+            +check-box-custom({type:'checkbox', id:'checkbox-5',name: 'checkbox-park[]', value:'Walibi Belgium'})
+          .form-col.half
+            +check-box-custom({type:'checkbox', id:'checkbox-6',name: 'checkbox-park[]', value:'Aqualibi Belgium'})
+            +check-box-custom({type:'checkbox', id:'checkbox-7',name: 'checkbox-park[]', value:'Walibi Rhône-Alpes'})
+            +check-box-custom({type:'checkbox', id:'checkbox-8',name: 'checkbox-park[]', value:'Jardin d\'Acclimatation'})
+            +check-box-custom({type:'checkbox', id:'checkbox-9',name: 'checkbox-park[]', value:'France Miniature'})
+    .form-row.space-1
+      .form-col
+        +check-box-custom(
+          {
+            type:'checkbox',
+            id:'check-conditions',
+            name: 'checkbox-conditions'
+          },
+          {
+            'required': true,
+            'data-parsley-required': 'true',
+            'data-parsley-required-message': 'Merci d’accepter les Conditions Générales d’Utilisation'
+          }
+        )(data-wrap-input)
+          label(for='check-conditions').label
+            span J’accepte les&nbsp;
+            +link('Conditions Générales d’Utilisation','javascript:').link
+            span.check
+    +button({type: 'submit', name: 'validate-btn'}).btn.btn-1(data-submit-btn)
+      span.icon-labels Valider
+      span.icon.icon-arrow &nbsp;

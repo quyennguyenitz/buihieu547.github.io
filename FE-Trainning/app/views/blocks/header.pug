@@ -1,0 +1,33 @@
+img.bg-header(src="images/bg-body-top.png", alt="header background")
+img.bg-header.mobile(src="images/bg-mobile.png", alt="header background") 
+div.nav-mobile(data-menu-mobile)
+  ul.main-menu
+    +nav
+    li.menu-item
+      div.symbol
+    li.menu-item
+      +social
+header
+  div.container
+    div.top-bar-mobile
+      a#navBtn.menu-mobile(href="#0" title="show menu mobile")
+      a.logo(href="#" title="aoste")
+        img(src="images/logo.png" alt="logo")
+      a.sign-in-mobile(href="#" title="sign in")
+    div.top-bar
+      ul.social-header
+        li.facebook
+          a(href="#" title="facebook")
+            i.fa.fa-facebook
+        li.twitter
+          a(href="#" title="twitter")
+            i.fa.fa-twitter
+      h1.logo-wrapper
+        a.logo(href="#" title="aoste")
+          img(src="images/logo.png" alt="logo")
+      div.sign-in
+        a(href="#" title="S'identifier").sign-in-name S'identifier 
+        div.sign-in-icon
+    div.nav-wrapper
+      ul.main-menu
+        +nav

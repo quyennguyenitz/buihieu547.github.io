@@ -1,0 +1,77 @@
+cách logo là 30px và cũng cách top header là 30px;
+social height và width 38px, opcity 30% color #000000 cách nhau 18px;
+sign in w160px, h44px;  opcity 30% color #000000 geomatric451-a fs 15px, 25px, icon 9px;
+menu width 1100px, height 52px; cách 110px so với html
+logo phần trong menu 14px;
+menu{
+	bg: #1f1f21;
+	hover text color : #ffe4a9;,
+	font-size 15px;
+	arrow cách 6px so với text;
+	cách 69px so với slider
+}
+sub-menu{
+	li cách nhau 31px;
+	ul padding là 37px;
+	font-size: 14px;
+	color: #d2ac47;
+	width: 205px;
+}
+
+.slider{
+	height: 438px;
+	max-width: 777px;
+	margin-bottom: 71px;
+	dot: height 16px, width: 
+}
+
+info{
+	918px + 20px;
+	cách nhau 72px;
+	margin bottom 72px;
+	portait: {
+		height: 523px;
+		+ amiri regular 44px;
+		+ amiri bold slanted 26.85px; dot cách 15px hai bên; cách chữ trên 30px;
+		+ geometric415BT Black A 11px; cách chữ trên ngay p là 6 còn lại là 12px;
+
+		khung text cách bot là 80px; cách border trắng là 55px;
+		border trong là 4px;
+		wrapper padding là 21px 20px;
+	},
+
+	mois{
+		padding: 63px 94px;
+		line ở giữa #f7f7f7 width 50px; height 4px; cách trên 55px; cách dưới 45px;
+
+		+ geometric706bt blackb 32px;
+		+ amiri slanted 58px #ffe4a9;
+		+ amiri bold font-size 20px; cach từ trên 63px;
+		+ button geometric706bt blackb 14px; height 46px; width: 233px;
+	}
+
+	inspiration{
+		top 50px cách tứ text đầu tiên, bot cách 63px với text cuối cùng
+		margin-left: 70px;
+		line ở giữa là height 3px, width 44px, cách top là 29px, cách bot là 32px #464648
+
+		+ amiri slanted 34px color: #ffe4a9;
+		+ Geometric706BT Black B 13.47px
+	},
+
+	surprise{
+		padding: 60px 29px 49px;
+		icon cách trên 26px;
+		line height 3 width 44 margin: 40px auto;
+
+		+ Geometric760BT BlackB
+		+ Amiri Slanted + Amiri SlantedB
+		+ Amiri Bold + Amiri regular
+	}
+}
+
+4 container:
+1 : 918px + 20px;
+2 : 1100px + 20px;
+3 : 1059px + 20px;
+4: 1159 + 30px;
