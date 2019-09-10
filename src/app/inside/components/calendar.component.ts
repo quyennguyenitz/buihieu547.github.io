@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { AcctionTaskService } from '../service/actionTask.service';
 import { BehaviorService } from "../../service/behavior.service";
+declare var moment: any;
 
 @Component({
     selector: 'calendar-component',

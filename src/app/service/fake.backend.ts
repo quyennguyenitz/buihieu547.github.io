@@ -1,5 +1,6 @@
 import {BaseRequestOptions, Http, RequestMethod, RequestOptions, Response, ResponseOptions, XHRBackend} from "@angular/http";
 import {MockBackend, MockConnection} from "@angular/http/testing";
+declare var moment: any;
 
 export function mockBackEndFactory(backend: MockBackend, options: BaseRequestOptions, realBackend: XHRBackend) {
     let token: string = 'fake-jwt-token';
